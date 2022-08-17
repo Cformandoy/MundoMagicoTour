@@ -1,0 +1,27 @@
+.table-border{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding-top: 22vh;
+    padding-bottom: 22vh;
+    justify-content: center;
+}
+
+.table-center{
+    max-width: 100vw;
+    min-width: 60vw;
+    padding: 15px;
+}
+
+.cuentas-body{
+    text-align: center;
+    margin: 1vw;
+    margin-top: 2vw;
+    
+}
+
+.btn-right-edit{
+    width: 250px !important;
+}
+
+

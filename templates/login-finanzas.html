@@ -1,0 +1,45 @@
+{% extends './headerLogin.html' %}
+
+    {%block body%}
+    <link href="{{ url_for('static', filename='css/login-finanzas.css')}}" rel="stylesheet" type="text/css">
+    <div class="signin-body">
+        <main class="form-signin w-100 m-auto">
+            
+              <!-- <img class="mb-4" src="https://i.ibb.co/VjXSzdP/Logo.png" alt="" width="57" height="57" style="display:flex"> -->
+              <h1 class="h3 mb-3 fw-normal" style="text-align: center;">Sign In Finanzas</h1>
+          
+              <div class="form-floating" style="margin-bottom: 2vh">
+                <input type="text" class="form-control" id="floatingInput" placeholder="nombre.apellido">
+                <label for="floatingInput">User</label>
+              </div>
+              <div class="form-floating" style="margin-bottom: 2vh">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+              </div>
+          
+              <button onclick="ButtonSignIn()" class="w-100 btn btn-lg btn-primary-edit" type="submit" id="buttonSignIn">Sign in</button>
+            
+          </main>
+    </div>
+
+    <button id="ButtonLoginError" class="w-100 btn btn-lg btn-primary"  hidden="true" data-bs-toggle="modal" data-bs-target="#staticAlertaLogin" type="button"></button>
+    <button onclick="location.href='index-finanzas'" id="ButtonLoginPass" class="w-100 btn btn-lg btn-primary"  hidden="true" type="button"></button>
+
+    <!-- Modal Login -->
+    <div class="modal fade" id="staticAlertaLogin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Error</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            Los datos ingresados no son correctos, presione el boton 'Aceptar' para continuar.
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Aceptar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    {%endblock%}

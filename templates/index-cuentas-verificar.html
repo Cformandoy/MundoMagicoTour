@@ -1,0 +1,58 @@
+{% extends './headerFinanzas.html' %}
+
+{%block body%}
+<link href="{{ url_for('static', filename='css/index-cuentas-verificar.css')}}" rel="stylesheet" type="text/css">
+<!-- componentes para sheet de excel -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+
+
+<style>
+    .table td{
+        padding:3px;
+    }
+    .table tbody tr td .btn-success{
+            padding: 2px 10px;
+            margin: 5px;
+            font-size :0.8em;
+    }
+    .table tbody tr td .btn-danger{
+            padding: 2px 10px;
+            margin: 5px;
+            font-size :0.8em;
+    }
+</style>
+
+    <body>
+        <div class="cuentas-body">
+            
+            <nav>
+              <div class="nav nav-tabs mb-3" id="nav-tab" style="justify-content: center;" role="tablist">
+                <button class="nav-link active" id="nav-ingresos-tab" data-bs-toggle="tab" data-bs-target="#nav-ingresos" type="button" role="tab" aria-controls="nav-ingresos" aria-selected="false">INGRESOS</button>
+                <button class="nav-link" id="nav-gastos-tab" data-bs-toggle="tab" data-bs-target="#nav-gastos" type="button" role="tab" aria-controls="nav-gastos" aria-selected="false">GASTOS</button>
+              </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade  active show" id="nav-ingresos" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <div class="cuentas-body">
+                    <button onclick="ButtonReporteCuentas()" class="w-100 btn btn-lg btn-primary-edit" style="margin-bottom: 1vh; width: 250px !important; font-size: 16px !important;" type="submit" >Generar Reporte</button>
+                    <a type="Button" class="w-100 btn btn-lg btn-primary-edit" style="margin-bottom: 1vh; width: 250px !important;  font-size: 16px !important;" href="https://docs.google.com/spreadsheets/d/1OmoQaTmJyi6y6B5W7xakoEwvpsALBU-P5W0ELVanaZE/edit#gid=0" target="_blank">Abrir Sheet</a>
+
+                    <script src="https://sheetdb.io/s/t/hj6l7i5788b63.js"></script>               
+                </div>  
+              </div>
+              <div class="tab-pane fade" id="nav-gastos" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="cuentas-body">
+                    <button onclick="ButtonReporteCuentas()" class="w-100 btn btn-lg btn-primary-edit" style="margin-bottom: 1vh; width: 250px !important; font-size: 16px !important;" type="submit" >Generar Reporte</button>
+                    <a type="Button" class="w-100 btn btn-lg btn-primary-edit" style="margin-bottom: 1vh; width: 250px !important;  font-size: 16px !important;" href="https://docs.google.com/spreadsheets/d/10iwQfOkhsCcQZ2vrPG3Rpjj_h23PsdH22DvPALzvnMs/edit#gid=0" target="_blank">Abrir Sheet</a>
+                    <script src="https://sheetdb.io/s/t/o4cxbbm681drt.js"></script>
+                </div>   
+              </div>
+              
+            </div>
+            </div>
+    
+    
+        
+    </body>
+{%endblock%}

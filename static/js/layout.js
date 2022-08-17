@@ -100,7 +100,7 @@ function ButtonSignIn() {
     if (userpass == pass){
         if((user == userCristopher) || (user == userNatacha) || (user == userIgnacio) || (user == userAmador) ){
             // document.getElementById('ButtonLoginPass').click()
-            document.location.href = 'index-finanzas.html', true;
+            document.location.href = 'index-finanzas', true;
         }else{
             document.getElementById('ButtonLoginError').click()
         }
@@ -109,27 +109,27 @@ function ButtonSignIn() {
     }
 }
 
-function ButtonAddIngreso(){
-    var tipo_i = document.getElementById('tipo_ingreso').value
-    var detalle_i = document.getElementById('detalle_ingreso').value
-    var metodo_i = document.getElementById('metodo_ingreso').value
-    var fecha_i = document.getElementById('fecha_ingreso').value
-    var monto_i = document.getElementById('monto_ingreso').value
+// function ButtonAddIngreso(){
+//     var tipo_i = document.getElementById('tipo_ingreso').value
+//     var detalle_i = document.getElementById('detalle_ingreso').value
+//     var metodo_i = document.getElementById('metodo_ingreso').value
+//     var fecha_i = document.getElementById('fecha_ingreso').value
+//     var monto_i = document.getElementById('monto_ingreso').value
     
-    eel.addIngreso(tipo_i,detalle_i,metodo_i,fecha_i,monto_i);
-    document.getElementById('ButtonOpenMsg').click()
-}
+//     eel.addIngreso(tipo_i,detalle_i,metodo_i,fecha_i,monto_i);
+//     document.getElementById('ButtonOpenMsg').click()
+// }
 
-function ButtonAddGasto(){
-    var tipo = document.getElementById('tipo_gasto').value
-    var detalle = document.getElementById('detalle_gasto').value
-    var metodo = document.getElementById('metodo_gasto').value
-    var fecha = document.getElementById('fecha_gasto').value
-    var monto = document.getElementById('monto_gasto').value
+// function ButtonAddGasto(){
+//     var tipo = document.getElementById('tipo_gasto').value
+//     var detalle = document.getElementById('detalle_gasto').value
+//     var metodo = document.getElementById('metodo_gasto').value
+//     var fecha = document.getElementById('fecha_gasto').value
+//     var monto = document.getElementById('monto_gasto').value
 
-    eel.addGasto(tipo,detalle,metodo,fecha,monto);
-    document.getElementById('ButtonOpenMsg').click()
-}
+//     eel.addGasto(tipo,detalle,metodo,fecha,monto);
+//     document.getElementById('ButtonOpenMsg').click()
+// }
 
 
 function ButtonReporteCuentas(){

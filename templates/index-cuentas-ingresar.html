@@ -1,0 +1,157 @@
+{% extends './headerFinanzas.html' %}
+
+{%block body%}
+
+<link href="{{ url_for('static', filename='css/index-cuentas-ingresar.css')}}" rel="stylesheet" type="text/css">
+<link href="{{ url_for('static', filename='css/datepicker.css')}}" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.js"></script>
+
+<script src="{{ url_for('static', filename='js/boostrapDatepicker.js')}}"></script>
+<body>
+    <div class="cuentas-body">
+      
+        <nav>
+          <div class="nav nav-tabs mb-3" id="nav-tab" style="justify-content: center;" role="tablist">
+            <button class="nav-link active" id="nav-ingresos-tab" data-bs-toggle="tab" data-bs-target="#nav-ingresos" type="button" role="tab" aria-controls="nav-ingresos" aria-selected="false">INGRESOS</button>
+            <button class="nav-link" id="nav-gastos-tab" data-bs-toggle="tab" data-bs-target="#nav-gastos" type="button" role="tab" aria-controls="nav-gastos" aria-selected="false">GASTOS</button>
+          </div>
+        </nav>
+      
+        <div class="tab-content" id="nav-tabContent">
+          
+          <div class="tab-pane fade active show" id="nav-ingresos" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <div class="cuentas-body">
+
+              <form action="/insertingreso" method = "POST">
+                <main class="form-signin w-100 m-auto">
+                  
+                    <h1 class="h3 mb-3 fw-normal" style="text-align: center;">Ingresar Ingreso</h1>
+                    <div class="form-floating">
+                      <select class="form-control" name="tipo_ingreso" id="tipo_ingreso" style="margin-bottom: 2vh" placeholder="Seleccione Tipo de Ingreso" required>
+                          
+                          <option value="">Seleccione el tipo de ingreso</option>
+                          <option value="Abono 50%">Abono 50%</option>
+                          <option value="Saldo 50%">Saldo 50%</option>
+                          <option value="Pago Total">Pago Total</option>
+                          <!-- <option value="cheque">Cheque</option> -->
+                      </select>
+                      <label for="tipo_ingreso">Tipo de Gasto</label>
+                    </div>
+      
+                    <div class="form-floating">
+                      <input type="text" class="form-control" style="margin-bottom: 2vh" name="detalle_ingreso" id="detalle_ingreso" placeholder="Ingrese Detalle">
+                      <label for="detalle_ingreso">Detalle</label>
+                    </div>
+                    
+                    <div class="form-floating">
+                      <select class="form-control" name="metodo_ingreso" id="metodo_ingreso" style="margin-bottom: 2vh" placeholder="Seleccione Metodo de Pago" required>
+                          
+                          <option value="">Seleccione el metodo de pago</option>
+                          <option value="Efectivo">Efectivo</option>
+                          <option value="Debito">Debito</option>
+                          <option value="Trasferencia">Trasferencia</option>
+                          <option value="Cheque">Cheque</option>
+                      </select>
+                      <label for="metodo_ingreso">Metodo de Pago</label>
+                    </div>
+                    
+                    <div class="form-floating input-group input-daterange">
+                      <input type="text" class="form-control" style="margin-bottom: 2vh; text-align: left;" name="fecha_ingreso" id="fecha_ingreso" placeholder="Seleccione Fecha">
+                      <label for="fecha_ingreso">Fecha</label>
+                      <span class="fa fa-calendar" id="fa-1"></span>
+                    </div>
+                   
+                    <div class="form-floating">
+                      <input type="number" class="form-control" style="margin-bottom: 2vh" name="monto_ingreso" id="monto_ingreso" placeholder="Ingrese Monto">
+                      <label for="monto_ingreso">Monto</label>
+                    </div>
+                
+                    <button class="w-100 btn btn-lg btn-primary-edit" style="margin-bottom: 1vh; background-color:#f19101" type="submit" id="btn_ingreso">Ingresar</button>
+                    <button onclick="cleanData()" class="w-100 btn btn-lg btn-secondary"  style="margin-bottom: 4vh;" id="buttonLimpiar">Limpiar</button>
+                
+                </main>
+              </form>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="nav-gastos" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="cuentas-body">
+              <form action="/insertgasto" method = "POST">
+                <main class="form-signin w-100 m-auto">
+                 
+                  <h1 class="h3 mb-3 fw-normal" style="text-align: center;">Ingresar Gasto</h1>
+                  
+                  <div class="form-floating">
+                    <select class="form-control" name="tipo_gasto" id="tipo_gasto" style="margin-bottom: 2vh" placeholder="Seleccione Tipo de Gasto" required>
+                        
+                        <option value="">Seleccione el tipo de gasto</option>
+                        <option value="Imposiciones">Imposiciones</option>
+                        <option value="Contabilidad">Contabilidad</option>
+                        <option value="Sueldos">Sueldos</option>
+                        <option value="Materiales">Materiales</option>
+                        <option value="Mantenimientos">Mantenimientos</option>
+                        <option value="Agua">Agua</option>
+                        <option value="Luz">Luz</option>
+                        <option value="Internet">Internet</option>
+                        <option value="Articulos de Limpieza">Articulos de Limpieza</option>
+                        <option value="Combustible">Combustible</option>
+                        <option value="Tag">Tag</option>
+                        <option value="Forum">Forum</option>
+                        <option value="Patentes Comerciales">Patentes Comerciales</option>
+                        <option value="Otro">Otro</option>
+                        <!-- <option value="cheque">Cheque</option> -->
+                    </select>
+                    <label for="tipo_gasto">Tipo de Gasto</label>
+                  </div>
+    
+                  <div class="form-floating">
+                    <input type="text" class="form-control" style="margin-bottom: 2vh" name="detalle_gasto" id="detalle_gasto" placeholder="Ingrese Detalle">
+                    <label for="detalle_gasto">Detalle</label>
+                  </div>
+                  
+                  <div class="form-floating">
+                    <select class="form-control" name="metodo_gasto" id="metodo_gasto" style="margin-bottom: 2vh" placeholder="Seleccione Metodo de Pago" required>
+                        
+                        <option value="">Seleccione el metodo de pago</option>
+                        <option value="Efectivo">Efectivo</option>
+                        <option value="Debito">Debito</option>
+                        <option value="Trasferencia">Trasferencia</option>
+                        <option value="Cheque">Cheque</option>
+                    </select>
+                    <label for="metodo_gasto">Metodo de Pago</label>
+                  </div>
+                  
+                  <div class="form-floating input-group input-daterange">
+                    <input type="text" class="form-control" style="margin-bottom: 2vh; text-align: left;" name="fecha_gasto" id="fecha_gasto" placeholder="Seleccione Fecha">
+                    <label for="fecha_gasto">Fecha</label>
+                    <span class="fa fa-calendar" id="fa-1"></span>
+                  </div>
+                 
+                  <div class="form-floating">
+                    <input type="number" class="form-control" style="margin-bottom: 2vh" name="monto_gasto" id="monto_gasto" placeholder="Ingrese Monto">
+                    <label for="monto_gasto">Monto</label>
+                  </div>
+              
+                  <button class="w-100 btn btn-lg btn-primary-edit" style="margin-bottom: 1vh" type="submit" id="btn_gasto">Ingresar</button>
+                  <button onclick="cleanData()" class="w-100 btn btn-lg btn-secondary"  style="margin-bottom: 4vh;" id="buttonLimpiar">Limpiar</button>
+                  <script src="layout.js"></script>
+                </main>
+              </form>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    
+</body>
+
+
+  
+{%endblock%}
