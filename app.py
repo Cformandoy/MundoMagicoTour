@@ -52,14 +52,11 @@ def meses(numero):
     return mes
 
 
-
+@app.route('/home')
 @app.route('/')
 def home():
     return render_template('index.html')
 
-@app.route('/home')
-def home2():
-    return render_template('index.html')
 
 @app.route('/login-finanzas')
 def login_finanzas():
