@@ -1,0 +1,22 @@
+{% extends './headerOne.html' %}
+
+{%block body%}
+<link href="{{ url_for('static', filename='css/whatsapp.css')}}" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<a href="https://api.whatsapp.com/send?phone=16892467227&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n." class="floatws" target="_blank">
+  <i class="fa fa-whatsapp my-floatws"></i>
+</a>
+<script src="https://cdn.checkout.com/js/framesv2.min.js"></script>
+<link href="{{ url_for('static', filename='css/index-pagar.css')}}" rel="stylesheet" type="text/css">
+
+<div class="px-4 py-5 my-5 text-center">
+  <h1 class="display-5 fw-bold">Realizar Pago</h1>
+  <div class="col-lg-6 mx-auto">
+    <div class="card-frame">
+      <!-- form will be added here -->
+    </div>
+  </div>
+</div>
+
+{%endblock%}

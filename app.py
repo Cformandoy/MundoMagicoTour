@@ -70,11 +70,13 @@ def index_finanzas():
 def index_cuentas_ingresar():
     return render_template('index-cuentas-ingresar.html')
 
-
 @app.route('/index-cuentas-verificar')
 def index_cuentas_verificar():
     return render_template('index-cuentas-verificar.html')
 
+@app.route('/index-pagar')
+def index_pagar():
+    return render_template('index-pagar.html')
 
 @app.route('/insertgasto', methods =['POST', "GET"])
 def insertgasto():
@@ -99,7 +101,6 @@ def insertgasto():
     
     return redirect(url_for("index_cuentas_ingresar"))
 
-
 @app.route('/insertingreso', methods =['POST', "GET"])
 def insertingreso():
     output = request.form.to_dict()
@@ -123,11 +124,9 @@ def insertingreso():
     
     return redirect(url_for("index_cuentas_ingresar"))
     
-
-
+    
 if __name__ == '__main__':
     app.run(debug=True, port=5757)
-    
 
 @eel.expose
 def reporteCuentas():

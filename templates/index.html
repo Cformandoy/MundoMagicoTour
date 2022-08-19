@@ -1,6 +1,13 @@
 {% extends './headerOne.html' %}
 
 {%block body%}
+<link href="{{ url_for('static', filename='css/whatsapp.css')}}" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<a href="https://api.whatsapp.com/send?phone=16892467227&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n." class="floatws" target="_blank">
+  <i class="fa fa-whatsapp my-floatws"></i>
+</a>
+
 <link href="{{ url_for('static', filename='css/index.css')}}" rel="stylesheet" type="text/css">
 <div>
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -84,12 +91,11 @@
                 </svg>
               </div>
               
-              <h2 class="fw-normal">Otra opcion</h2>
-              <p>Panel diseñado para la administración, con automatizaciones para brindar un mejor desenpeño.</p>
-              <p><a class="btn btn-secondary" href="#">Ingresar a opcion &raquo;</a></p>
+              <h2 class="fw-normal">Realizar Pago</h2>
+              <p>Interfaz diseñada para realizar pagos con tarjetas de credito, debito y prepago.</p>
+              <p><a class="btn btn-secondary" href="/index-pagar">Ingresar a pagar &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
-            
               <div class="bd-placeholder-img rounded-circle btn-primary-edit" style="width: 140px;height: 140px;display: inline-flex;">
                 <svg style="place-self: center; margin: auto;" width="80" height="80"xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
@@ -153,4 +159,6 @@
 
     </div><!-- /.container -->
 </div>
+
+
 {%endblock%}
