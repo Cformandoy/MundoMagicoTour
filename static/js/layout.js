@@ -135,3 +135,6 @@ function ButtonSignIn() {
 function ButtonReporteCuentas(){
     eel.reporteCuentas();
 }
+
+
+Frames.init("pk_sbox_XXXX");
