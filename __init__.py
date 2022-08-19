@@ -9,6 +9,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 from googleapiclient import discovery
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = "cp209182793"
 
 #GOOGLE API
 
