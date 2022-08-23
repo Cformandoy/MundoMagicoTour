@@ -113,7 +113,7 @@
       <script>
         var swiper = new Swiper(".mySwiper", {
           slidesPerView: 1,
-          spaceBetween: 15,
+          spaceBetween: 1,
           slidesPerGroup: 1,
           breakpoints: {
           768: {
@@ -122,6 +122,9 @@
     
             991: {
               slidesPerView: 3,
+            },
+            1100: {
+              slidesPerView: 4,
             },
           },
           loop: true,
@@ -140,6 +143,128 @@
     </div>
   </div>
   
+
+  <h1>Alquiler de vehiculos</h1>
+  <div class="container">
+    <div class="swiper-container mySwiper2 my-5 py-5">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide d-flex justify-content-center">
+
+          <div class="card" >
+            <figure >
+              <img class ="imgcard" src="{{ url_for('static', filename='resources/index/img1.jpeg')}}" >
+            </figure>
+   
+            <div class="card-body">
+              <h5 class="card-title">ICON PARK</h5>
+              <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+              </p>
+             </div>
+   
+           </div>
+         </div>
+         <div class="swiper-slide d-flex justify-content-center">
+          <div class="card" >
+            <figure >
+              <img class ="imgcard" src="{{ url_for('static', filename='resources/index/img2.jpeg')}}" >
+            </figure>
+   
+            <div class="card-body">
+              <h5 class="card-title">DISNEYLAND</h5>
+              <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+              </p>
+             </div>
+   
+           </div>
+         </div>
+         <div class="swiper-slide d-flex justify-content-center">
+          <div class="card" >
+            <figure >
+              <img class ="imgcard" src="{{ url_for('static', filename='resources/index/img3.jpeg')}}" >
+            </figure>
+   
+            <div class="card-body">
+              <h5 class="card-title">2 DIAS - 2 PARQUES</h5>
+              <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+              </p>
+             </div>
+   
+           </div>
+         </div>
+         <div class="swiper-slide d-flex justify-content-center">
+          <div class="card" >
+            <figure >
+              <img class ="imgcard" src="{{ url_for('static', filename='resources/index/img4.jpeg')}}" >
+            </figure>
+   
+            <div class="card-body">
+              <h5 class="card-title">Hotel 3</h5>
+              <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+              </p>
+             </div>
+   
+           </div>
+         </div>
+         <div class="swiper-slide d-flex justify-content-center">
+          <div class="card" >
+            <figure >
+              <img class ="imgcard" src="{{ url_for('static', filename='resources/index/img5.jpeg')}}" >
+            </figure>
+   
+            <div class="card-body">
+              <h5 class="card-title">Hotel 3</h5>
+              <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+              </p>
+             </div>
+   
+           </div>
+         </div>
+      </div>
+  
+      <!--  for left and right navigation buttons -->
+  
+      <div class="swiper-button-sig2" style= "left: auto;right: 10px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="auto" height="auto" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+          <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+        </svg>
+      </div>
+      <div class="swiper-button-ant2" style= "left: 10px;right: auto;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="auto" height="auto" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+          <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+        </svg>
+      </div>
+      <script>
+        var swiper = new Swiper(".mySwiper2", {
+          slidesPerView: 1,
+          spaceBetween: 1,
+          slidesPerGroup: 1,
+          breakpoints: {
+          768: {
+              slidesPerView: 2,
+            },
+    
+            991: {
+              slidesPerView: 3,
+            },
+            1100: {
+              slidesPerView: 4,
+            },
+          },
+          loop: true,
+          navigation:{
+            nextEl:".swiper-button-sig2",
+            prevEl: ".swiper-button-ant2",
+          },
+          autoplay: {
+            delay: 5000,
+          }
+    
+    
+        });
+    
+      </script>
+    </div>
+  </div>
 </div>
   
 

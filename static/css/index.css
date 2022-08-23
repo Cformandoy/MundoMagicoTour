@@ -145,7 +145,7 @@
   border-radius:10px 10px 0 0;
   }
 
-  .swiper-button-sig, .swiper-button-ant{
+  .swiper-button-sig, .swiper-button-ant, swiper-button-sig2, .swiper-button-ant2{
     position: absolute;
     top: 60%;
     width: calc((var(--swiper-navigation-size)/ 44 * 27)* 2);
@@ -165,7 +165,7 @@
   h1 {
     font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
     font-size: 3vmax;
-    margin-bottom: -9vh;
+    margin-bottom: -4rem;
     background-color: #5390d9;
     background-image: linear-gradient(45deg, #6930c3, #5390d9);
     -webkit-background-clip: text;
