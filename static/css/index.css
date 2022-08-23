@@ -110,6 +110,7 @@
     padding-top: 5rem !important;
     text-align: center;
     overflow-x: hidden !important;
+    overflow-y: hidden !important;
   }
 
 
@@ -133,6 +134,7 @@
     
   .card{
    width: 18rem;
+   max-width: 18rem;
    border-radius: 10px;
    border:none;
    backdrop-filter: blur(8px);

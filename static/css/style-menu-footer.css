@@ -5,9 +5,17 @@
   }
 
   .background-one{
-    padding: 1% !important;
     background-color: #8EC5FC;
     background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+  }
+
+  .rectanguloSuperior{
+    z-index: 99;
+    height: 5rem;
+    width: 100%;
+    margin-top: 2rem;
+    background-color: #abc5fc;
+    background-image: linear-gradient(62deg, #abc5fc 0%, #dcc3fc 100%);
   }
 
   .HeaderLogo {
@@ -21,6 +29,7 @@
     
   }
   .Header-sticky{
+    padding-right: 1rem;
     position: sticky;
     top: 2rem;
     z-index: 100;
@@ -28,7 +37,6 @@
 
   .navbar{
     border-radius: 15px;
-    margin-top: 2rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
