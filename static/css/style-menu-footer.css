@@ -84,6 +84,8 @@
     }
     #toggler:checked ~ .menu{
       max-height: 100%;
+      background-color: #fff;
+      border-radius: 15px;
     }
   }
 
@@ -125,7 +127,7 @@
   padding: 0;
   text-decoration: none;
   text-align: center;
-  color: #fefefe;
+  color: #525252;
   font-size: 1.5625rem;
   font-weight: normal;
   line-height: 2em;
@@ -141,26 +143,32 @@
           transform: rotate(360deg);
 }
 
-.rounded-social-buttons .fa-twitter, .fa-facebook-f, .fa-linkedin, .fa-youtube, .fa-instagram {
+.rounded-social-buttons .fa-twitter, .fa-facebook-f, .fa-linkedin, .fa-youtube, .fa-instagram, .fa-tiktok {
   font-size: 25px;
 }
 
 .rounded-social-buttons .social-button.facebook {
-  background: #3b5998;
+  background-color: #ffffff00;
 }
 
 .rounded-social-buttons .social-button.facebook:hover, .rounded-social-buttons .social-button.facebook:focus {
-  color: #3b5998;
-  background: #fefefe;
-  border-color: #3b5998;
+  background: #ffffff00;
 }
 
 .rounded-social-buttons .social-button.instagram {
-  background: #125688;
+  
+  background-color: #ffffff00;
 }
 
-.rounded-social-buttons .social-button.instagram:hover, .rounded-social-buttons .social-button.instagram:focus {
-  color: #125688;
-  background: #fefefe;
-  border-color: #125688;
+.rounded-social-buttons .social-button.instagram:hover, .rounded-social-buttons .social-button.tiktok:focus {
+  background: #ffffff00;
+}
+
+.rounded-social-buttons .social-button.tiktok {
+  
+  background-color: #ffffff00;
+}
+
+.rounded-social-buttons .social-button.tiktok:hover, .rounded-social-buttons .social-button.tiktok:focus {
+  background: #ffffff00;
 }

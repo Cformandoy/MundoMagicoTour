@@ -138,3 +138,10 @@ function ButtonReporteCuentas(){
 
 
 Frames.init("pk_sbox_XXXX");
+
+
+
+//  slider
+
+
+
