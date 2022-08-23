@@ -109,6 +109,7 @@
   .divbody{
     padding-top: 5rem !important;
     text-align: center;
+    overflow-x: hidden !important;
   }
 
 
@@ -145,9 +146,25 @@
   border-radius:10px 10px 0 0;
   }
 
-  .swiper-button-sig, .swiper-button-ant, swiper-button-sig2, .swiper-button-ant2{
+  .swiper-button-sig, .swiper-button-ant{
     position: absolute;
     top: 60%;
+    width: calc((var(--swiper-navigation-size)/ 44 * 27)* 2);
+    height: var(--swiper-navigation-size);
+    margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+        
+
+  }
+
+  .swiper-button-sig2, .swiper-button-ant2{
+    position: absolute;
+    top: 130%;
     width: calc((var(--swiper-navigation-size)/ 44 * 27)* 2);
     height: var(--swiper-navigation-size);
     margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
