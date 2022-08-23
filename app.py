@@ -58,7 +58,8 @@ def meses(numero):
 def home():
     return render_template('index.html')
 
-
+@app.route('/login')
+@app.route('/admin')
 @app.route('/login-finanzas')
 def login_finanzas():
     return render_template('login-finanzas.html')
