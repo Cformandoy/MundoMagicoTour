@@ -1,0 +1,182 @@
+
+
+  .backhtml{
+    background-color: #c3ccfc ;
+  }
+
+  .background-one{
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+  }
+
+  .rectanguloSuperior{
+    z-index: 99;
+    height: 5rem;
+    width: 100%;
+    margin-top: 2rem;
+    background-color: #abc5fc;
+    background-image: linear-gradient(62deg, #abc5fc 0%, #dcc3fc 100%);
+  }
+
+  .HeaderLogo {
+    position: absolute;
+    margin:auto;
+    width: 30vw !important;
+    height: 30vw !important;
+    max-width: 180px !important;
+    max-height: 180px !important;
+    top: -3.9vh !important;
+    
+  }
+  .Header-sticky{
+    padding-right: 1rem;
+    position: sticky;
+    top: 2rem;
+    z-index: 100;
+  }
+
+  .navbar{
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 15px;
+    min-height: 55px;
+    max-height: 55px;
+    margin-left: 10vh;
+  }
+
+  .navbar a{
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .logo{
+    margin-left: -10vh;
+  }
+
+  .list{
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+
+  #toggler,
+  .navbar label{
+    display: none;
+  }
+
+  @media screen and
+  (max-width:600px){
+    .menu{
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+    }
+
+    .list{
+      flex-direction: column;
+      align-items: center;
+      padding: 15px;
+    }
+
+    .navbar label{
+      margin-left: 13vh;
+      margin-top: 2rem;
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+      margin-block: auto;
+    }
+    #toggler:checked ~ .menu{
+      max-height: 100%;
+      background-color: #fff;
+      border-radius: 15px;
+    }
+  }
+
+  .btn-primary-edit {
+    color: #fff !important;
+    background-color: #8C1200 !important;
+    border-color: #6c757d !important;
+}
+
+
+
+/* footer */
+
+.footerOne{
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 3px );
+  -webkit-backdrop-filter: blur( 3px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  padding: 8px;
+}
+
+.svg-inline--fa {
+  vertical-align: -0.200em;
+}
+
+.rounded-social-buttons {
+  text-align: center;
+}
+
+.rounded-social-buttons .social-button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 3.125rem;
+  height: 3.125rem;
+  border: 0.125rem solid transparent;
+  padding: 0;
+  text-decoration: none;
+  text-align: center;
+  color: #525252;
+  font-size: 1.5625rem;
+  font-weight: normal;
+  line-height: 2em;
+  border-radius: 1.6875rem;
+  transition: all 0.5s ease;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.rounded-social-buttons .social-button:hover, .rounded-social-buttons .social-button:focus {
+  -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.rounded-social-buttons .fa-twitter, .fa-facebook-f, .fa-linkedin, .fa-youtube, .fa-instagram, .fa-tiktok {
+  font-size: 25px;
+}
+
+.rounded-social-buttons .social-button.facebook {
+  background-color: #ffffff00;
+}
+
+.rounded-social-buttons .social-button.facebook:hover, .rounded-social-buttons .social-button.facebook:focus {
+  background: #ffffff00;
+}
+
+.rounded-social-buttons .social-button.instagram {
+  
+  background-color: #ffffff00;
+}
+
+.rounded-social-buttons .social-button.instagram:hover, .rounded-social-buttons .social-button.tiktok:focus {
+  background: #ffffff00;
+}
+
+.rounded-social-buttons .social-button.tiktok {
+  
+  background-color: #ffffff00;
+}
+
+.rounded-social-buttons .social-button.tiktok:hover, .rounded-social-buttons .social-button.tiktok:focus {
+  background: #ffffff00;
+}
