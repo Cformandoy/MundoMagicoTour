@@ -39,6 +39,7 @@
                           <option value="Abono 50%">Abono 50%</option>
                           <option value="Saldo 50%">Saldo 50%</option>
                           <option value="Pago Total">Pago Total</option>
+                          <option value="Otro">Otro (Indique en detalle)</option>
                           <!-- <option value="cheque">Cheque</option> -->
                       </select>
                       <label for="tipo_ingreso">Tipo de Gasto</label>
@@ -53,10 +54,12 @@
                       <select class="form-control" name="metodo_ingreso" id="metodo_ingreso" style="margin-bottom: 2vh" placeholder="Seleccione Metodo de Pago" required>
                           
                           <option value="">Seleccione el metodo de pago</option>
-                          <option value="Efectivo">Efectivo</option>
-                          <option value="Debito">Debito</option>
-                          <option value="Trasferencia">Trasferencia</option>
-                          <option value="Cheque">Cheque</option>
+                          <option value="Cash">Cash</option>
+                          <option value="Zelle">Zelle</option>
+                          <option value="Paypal">Paypal</option>
+                          <option value="Pago Web">Pago Web</option>
+                          <option value="Trasferencia Chilena">Trasferencia Chilena</option>
+                          
                       </select>
                       <label for="metodo_ingreso">Metodo de Pago</label>
                     </div>
@@ -69,7 +72,7 @@
                    
                     <div class="form-floating">
                       <input type="number" class="form-control" style="margin-bottom: 2vh" name="monto_ingreso" id="monto_ingreso" placeholder="Ingrese Monto">
-                      <label for="monto_ingreso">Monto</label>
+                      <label for="monto_ingreso">Monto USD</label>
                     </div>
                 
                     <button class="w-100 btn btn-lg btn-primary-edit" style="margin-bottom: 1vh; background-color:#f19101" type="submit" id="btn_ingreso">Ingresar</button>
@@ -90,10 +93,7 @@
                     <select class="form-control" name="tipo_gasto" id="tipo_gasto" style="margin-bottom: 2vh" placeholder="Seleccione Tipo de Gasto" required>
                         
                         <option value="">Seleccione el tipo de gasto</option>
-                        <option value="Imposiciones">Imposiciones</option>
-                        <option value="Contabilidad">Contabilidad</option>
                         <option value="Sueldos">Sueldos</option>
-                        <option value="Materiales">Materiales</option>
                         <option value="Mantenimientos">Mantenimientos</option>
                         <option value="Agua">Agua</option>
                         <option value="Luz">Luz</option>
@@ -101,9 +101,7 @@
                         <option value="Articulos de Limpieza">Articulos de Limpieza</option>
                         <option value="Combustible">Combustible</option>
                         <option value="Tag">Tag</option>
-                        <option value="Forum">Forum</option>
-                        <option value="Patentes Comerciales">Patentes Comerciales</option>
-                        <option value="Otro">Otro</option>
+                        <option value="Otro">Otro (Indique en detalle)</option>
                         <!-- <option value="cheque">Cheque</option> -->
                     </select>
                     <label for="tipo_gasto">Tipo de Gasto</label>
@@ -118,10 +116,11 @@
                     <select class="form-control" name="metodo_gasto" id="metodo_gasto" style="margin-bottom: 2vh" placeholder="Seleccione Metodo de Pago" required>
                         
                         <option value="">Seleccione el metodo de pago</option>
-                        <option value="Efectivo">Efectivo</option>
-                        <option value="Debito">Debito</option>
-                        <option value="Trasferencia">Trasferencia</option>
-                        <option value="Cheque">Cheque</option>
+                        <option value="Cash">Cash</option>
+                        <option value="Zelle">Zelle</option>
+                        <option value="Paypal">Paypal</option>
+                        <option value="Descuento Banco">Descuento Banco</option>
+                        
                     </select>
                     <label for="metodo_gasto">Metodo de Pago</label>
                   </div>
@@ -134,7 +133,7 @@
                  
                   <div class="form-floating">
                     <input type="number" class="form-control" style="margin-bottom: 2vh" name="monto_gasto" id="monto_gasto" placeholder="Ingrese Monto">
-                    <label for="monto_gasto">Monto</label>
+                    <label for="monto_gasto">Monto USD</label>
                   </div>
               
                   <button class="w-100 btn btn-lg btn-primary-edit" style="margin-bottom: 1vh" type="submit" id="btn_gasto">Ingresar</button>
