@@ -87,26 +87,31 @@ function ButtonOne() {
 function ButtonSignIn() { 
     var user = document.getElementById('floatingInput').value
     var pass = document.getElementById('floatingPassword').value
-
+    var usuarioCorrecto = false
     // usuarios
-    // IGNACIO
-    const userIgnacio = 'ignacio.soto'
-    const userNatacha = 'natacha.soto'
-    const userCristopher= 'cristopher.pozas'
-    const userAmador = 'amador.soto'
+    const usuarios = [
+        ['ignacio.soto', 'ignacio', 'Ignacio Soto'],
+        ['natacha.soto', 'natacha', 'Natacha Soto'],
+        ['scarlett.soto', 'scarlett', 'Scarlett Soto'],
+        ['amador.soto', 'amador', 'Amador Soto'],
+        ['leonardo.maulen', 'leonardo', 'Leonardo Maulen'],
+        ['cristopher.pozas','cristopher', 'Cristopher Pozas']
+    ]
 
-    const userpass = 'muebleria10'
-
-    if (userpass == pass){
-        if((user == userCristopher) || (user == userNatacha) || (user == userIgnacio) || (user == userAmador) ){
-            // document.getElementById('ButtonLoginPass').click()
-            document.location.href = 'index-finanzas', true;
-        }else{
-            document.getElementById('ButtonLoginError').click()
+    for (let i = 0; i < usuarios.length; i++) {
+        const userSelect = usuarios[i];
+        if ((userSelect[0] == user) && (userSelect[1] == pass)){
+            usuarioCorrecto = true
+            break
         }
+    }
+    
+    if (usuarioCorrecto == true){
+        document.location.href = 'index-finanzas', true;
     }else{
         document.getElementById('ButtonLoginError').click()
     }
+    
 }
 
 // function ButtonAddIngreso(){
