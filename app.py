@@ -45,16 +45,10 @@ def request_loader(request):
     return user
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/login-finanzas', methods=['GET', 'POST'])
 def login():
     if flask.request.method == 'GET':
-        return '''
-               <form action='login' method='POST'>
-                <input type='text' name='email' id='email' placeholder='email'/>
-                <input type='password' name='password' id='password' placeholder='password'/>
-                <input type='submit' name='submit'/>
-               </form>
-               '''
+        return render_template('login-finanzas.html')
 
     email = flask.request.form['email']
     if email in users and flask.request.form['password'] == users[email]['password']:
@@ -124,17 +118,16 @@ def meses(numero):
     return mes
 
 
-@app.route('/home')
-@app.route('/')
-@app.route('/admin')
-@app.route('/login-finanzas')
-def login_finanzas():
-    return render_template('login-finanzas.html')
+# @app.route('/home')
+# @app.route('/')
+# @app.route('/admin')
+# @app.route('/login-finanzas')
+# def login_finanzas():
+#     return render_template('login-finanzas.html')
 
 @app.route('/index-finanzas')
 @flask_login.login_required
 def index_finanzas():
-    return 'Logged in as: ' + flask_login.current_user.id
     return render_template('index-finanzas.html')
 
 @app.route('/index-cuentas-ingresar')

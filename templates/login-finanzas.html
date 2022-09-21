@@ -4,21 +4,12 @@
     <link href="{{ url_for('static', filename='css/login-finanzas.css')}}" rel="stylesheet" type="text/css">
     <div class="signin-body">
         <main class="form-signin w-100 m-auto">
-            
-              <!-- <img class="mb-4" src="https://i.ibb.co/VjXSzdP/Logo.png" alt="" width="57" height="57" style="display:flex"> -->
-              <h1 class="h3 mb-3 fw-normal" style="text-align: center;">Sign In Finanzas</h1>
-          
-              <div class="form-floating" style="margin-bottom: 2vh">
-                <input type="text" class="form-control" id="floatingInput" placeholder="nombre.apellido">
-                <label for="floatingInput">User</label>
-              </div>
-              <div class="form-floating" style="margin-bottom: 2vh">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
-              </div>
-          
-              <button onclick="ButtonSignIn()" class="w-100 btn btn-lg btn-primary-edit" type="submit" id="buttonSignIn">Sign in</button>
-            
+          <h1 class="h3 mb-3 fw-normal" style="text-align: center;">Sign In Finanzas</h1>
+          <form action='login' method='POST'>
+            <input type='text' name='email' id='email' placeholder='email'/>
+            <input type='password' name='password' id='password' placeholder='password'/>
+            <input type='submit' name='submit'/>
+           </form>
           </main>
     </div>
 
