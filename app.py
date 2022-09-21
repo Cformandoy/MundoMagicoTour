@@ -16,7 +16,8 @@ app.config['SECRET_KEY'] = "cp209182793"
 login_manager = flask_login.LoginManager()
 
 login_manager.init_app(app)
-users = {'foo@bar.tld': {'password': 'secret'}}
+
+users = {'foo@bar.tld': {'password': 'secret'},}
 
 
 class User(flask_login.UserMixin):
@@ -120,7 +121,7 @@ def logout():
 
 @login_manager.unauthorized_handler
 def unauthorized_handler():
-    return redirect(url_for("login"))
+    return 'Unauthorized', 401
 
 
 
