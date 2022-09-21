@@ -44,46 +44,6 @@ def request_loader(request):
     user.id = email
     return user
 
-
-@app.route('/')
-def index():
-    return redirect(url_for('login'))
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if flask.request.method == 'POST':
-        print(request.form['email'])
-        print(request.form['password'])
-        return redirect(url_for("index_finanzas"))
-    if flask.request.method == 'GET':
-        return render_template('login.html')
-
-    # email = flask.request.form['email']
-    # if email in users and flask.request.form['password'] == users[email]['password']:
-    #     user = User()
-    #     user.id = email
-    #     flask_login.login_user(user)
-    #     return flask.redirect(flask.url_for('index-finanzas'))
-
-    # return 'Bad login'
-
-
-@app.route('/protected')
-@flask_login.login_required
-def protected():
-    return 'Logged in as: ' + flask_login.current_user.id
-
-@app.route('/logout')
-def logout():
-    flask_login.logout_user()
-    return 'Logged out'
-
-@login_manager.unauthorized_handler
-def unauthorized_handler():
-    return 'Unauthorized', 401
-
-
-
 #GOOGLE API
 
 scope = ['https://www.googleapis.com/auth/spreadsheets',
@@ -126,12 +86,46 @@ def meses(numero):
     return mes
 
 
-# @app.route('/home')
-# @app.route('/')
-# @app.route('/admin')
-# @app.route('/login-finanzas')
-# def login_finanzas():
-#     return render_template('login-finanzas.html')
+@app.route('/')
+def index():
+    return redirect(url_for('login'))
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if flask.request.method == 'POST':
+        print(request.form['email'])
+        print(request.form['password'])
+        return redirect(url_for("index_finanzas"))
+    if flask.request.method == 'GET':
+        return render_template('login.html')
+
+    # email = flask.request.form['email']
+    # if email in users and flask.request.form['password'] == users[email]['password']:
+    #     user = User()
+    #     user.id = email
+    #     flask_login.login_user(user)
+    #     return flask.redirect(flask.url_for('index-finanzas'))
+
+    # return 'Bad login'
+
+
+@app.route('/protected')
+@flask_login.login_required
+def protected():
+    return 'Logged in as: ' + flask_login.current_user.id
+
+@app.route('/logout')
+def logout():
+    flask_login.logout_user()
+    return 'Logged out'
+
+@login_manager.unauthorized_handler
+def unauthorized_handler():
+    return 'Unauthorized', 401
+
+
+
+
 
 @app.route('/index-finanzas')
 @flask_login.login_required
@@ -139,18 +133,22 @@ def index_finanzas():
     return render_template('index-finanzas.html')
 
 @app.route('/index-cuentas-ingresar')
+@flask_login.login_required
 def index_cuentas_ingresar():
     return render_template('index-cuentas-ingresar.html')
 
 @app.route('/index-cuentas-verificar')
+@flask_login.login_required
 def index_cuentas_verificar():
     return render_template('index-cuentas-verificar.html')
 
 @app.route('/index-pagar')
+@flask_login.login_required
 def index_pagar():
     return render_template('index-pagar.html')
 
 @app.route('/insertgasto', methods =['POST', "GET"])
+@flask_login.login_required
 def insertgasto():
     output = request.form.to_dict()
     
@@ -174,6 +172,7 @@ def insertgasto():
     return redirect(url_for("index_cuentas_ingresar"))
 
 @app.route('/insertingreso', methods =['POST', "GET"])
+@flask_login.login_required
 def insertingreso():
     output = request.form.to_dict()
     
