@@ -125,7 +125,6 @@ def meses(numero):
 
 @app.route('/home')
 @app.route('/')
-@app.route('/login')
 @app.route('/admin')
 @app.route('/login-finanzas')
 def login_finanzas():
