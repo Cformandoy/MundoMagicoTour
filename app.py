@@ -54,7 +54,7 @@ def login():
     if flask.request.method == 'POST':
         print(request.form['email'])
         print(request.form['password'])
-        return render_template(url_for('index_finanzas'))
+        return render_template(url_for('protected'))
     else:
         return render_template('login.html')
 
