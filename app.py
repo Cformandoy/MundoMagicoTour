@@ -2,6 +2,7 @@ from crypt import methods
 from urllib import request
 from flask import Flask, render_template, request, url_for, redirect
 import eel
+import flask
 import flask_login
 
 import gspread
