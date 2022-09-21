@@ -17,11 +17,7 @@ login_manager = flask_login.LoginManager()
 
 login_manager.init_app(app)
 
-users = {'cformandoy@gmail.com': {'password': 'cristopher'},
-         'natacha.soto': {'password': 'natacha'},
-         'scarlett.soto': {'password': 'scarlett'},
-         'leonardo.maulen': {'password': 'leonardo'},
-         'ignacio.soto': {'password': 'ignacio'}}
+users = {'cformandoy@gmail.com': {'password': 'cristopher'}}
 
 
 class User(flask_login.UserMixin):
