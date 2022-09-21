@@ -47,7 +47,7 @@ def request_loader(request):
 
 @app.route('/')
 def index():
-    return redirect(url_for(login))
+    return redirect(url_for('login'))
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -56,7 +56,7 @@ def login():
         print(request.form['password'])
         return render_template('login.html')
     else:
-        return render_template(login.html)
+        return render_template('login.html')
 
     # email = flask.request.form['email']
     # if email in users and flask.request.form['password'] == users[email]['password']:
