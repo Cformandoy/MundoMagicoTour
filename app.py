@@ -45,10 +45,14 @@ def request_loader(request):
     return user
 
 
-@app.route('/login-finanzas', methods=['GET', 'POST'])
+@app.route('/')
+def index():
+    return redirect(url_for(login))
+
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     if flask.request.method == 'GET':
-        return render_template('login-finanzas.html')
+        return render_template('login.html')
 
     email = flask.request.form['email']
     if email in users and flask.request.form['password'] == users[email]['password']:
