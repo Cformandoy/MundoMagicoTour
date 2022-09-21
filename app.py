@@ -61,7 +61,7 @@ def login():
         user = User()
         user.id = email
         flask_login.login_user(user)
-        return flask.redirect(flask.url_for('protected'))
+        return flask.redirect(flask.url_for('index-finanzas'))
 
     return 'Bad login'
 
@@ -79,6 +79,7 @@ def logout():
 @login_manager.unauthorized_handler
 def unauthorized_handler():
     return 'Unauthorized', 401
+
 
 
 #GOOGLE API
@@ -131,7 +132,9 @@ def login_finanzas():
     return render_template('login-finanzas.html')
 
 @app.route('/index-finanzas')
+@flask_login.login_required
 def index_finanzas():
+    return 'Logged in as: ' + flask_login.current_user.id
     return render_template('index-finanzas.html')
 
 @app.route('/index-cuentas-ingresar')
