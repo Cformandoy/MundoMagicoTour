@@ -106,8 +106,7 @@ def settings():
 @app.route('/index-finanzas')
 @flask_login.login_required
 def index_finanzas():
-    name= flask_login.current_user.id
-    return render_template("index-finanzas.html", name)
+    return render_template("index-finanzas.html", name= flask_login.current_user.id)
 
 
 @app.route('/index-cuentas-ingresar')
