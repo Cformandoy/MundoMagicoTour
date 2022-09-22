@@ -52,9 +52,14 @@ def index():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if flask.request.method == 'POST':
-        print(request.form['email'])
-        print(request.form['password'])
-        return redirect(url_for("index_finanzas"))
+        
+        email = flask.request.form['email']
+        if email in users and flask.request.form['password'] == users[email]['password']:
+            user = User()
+            user.id = email
+            flask_login.login_user(user)
+            return flask.redirect(flask.url_for('index_finanzas'))
+        
     if flask.request.method == 'GET':
         return render_template('login.html')
 
