@@ -93,7 +93,7 @@ def logout():
 
 @login_manager.unauthorized_handler
 def unauthorized_handler():
-    return 'Unauthorized', 401
+    return redirect(url_for('login'))
 
 
 
