@@ -9,6 +9,18 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from googleapiclient import discovery
 
+#GOOGLE API
+
+scope = ['https://www.googleapis.com/auth/spreadsheets',
+         'https://www.googleapis.com/auth/drive']
+
+
+credenciales = ServiceAccountCredentials.from_json_keyfile_name('./static/gs/gs-credentials.json', scope)
+
+cliente = gspread.authorize(credenciales)
+
+service = discovery.build('sheets', 'v4', credentials=credenciales)
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "cp209182793"
 
@@ -89,73 +101,28 @@ def unauthorized_handler():
 
 
 
-#GOOGLE API
-
-scope = ['https://www.googleapis.com/auth/spreadsheets',
-         'https://www.googleapis.com/auth/drive']
-
-
-credenciales = ServiceAccountCredentials.from_json_keyfile_name('./static/gs/gs-credentials.json', scope)
-
-cliente = gspread.authorize(credenciales)
-
-service = discovery.build('sheets', 'v4', credentials=credenciales)
-
-def meses(numero):
-    mes = ''
-    if numero == '01':
-        mes = 'Ene'
-    elif numero == '02':
-        mes = 'Feb'
-    elif numero == '03':
-        mes = 'Mar'
-    elif numero == '04':
-        mes = 'Abr'
-    elif numero == '05':
-        mes = 'May'
-    elif numero == '06':
-        mes = 'Jun'
-    elif numero == '07':
-        mes = 'Jul'
-    elif numero == '08':
-        mes = 'Ago'
-    elif numero == '09':
-        mes = 'Sep'
-    elif numero == '10':
-        mes = 'Oct'
-    elif numero == '11':
-        mes = 'Nov'
-    elif numero == '12':
-        mes = 'Dic'
-    
-    return mes
-
-
-# @app.route('/home')
-# @app.route('/')
-# @app.route('/admin')
-# @app.route('/login-finanzas')
-# def login_finanzas():
-#     return render_template('login-finanzas.html')
-
 @app.route('/index-finanzas')
 @flask_login.login_required
 def index_finanzas():
     return render_template('index-finanzas.html')
 
 @app.route('/index-cuentas-ingresar')
+@flask_login.login_required
 def index_cuentas_ingresar():
     return render_template('index-cuentas-ingresar.html')
 
 @app.route('/index-cuentas-verificar')
+@flask_login.login_required
 def index_cuentas_verificar():
     return render_template('index-cuentas-verificar.html')
 
 @app.route('/index-pagar')
+@flask_login.login_required
 def index_pagar():
     return render_template('index-pagar.html')
 
 @app.route('/insertgasto', methods =['POST', "GET"])
+@flask_login.login_required
 def insertgasto():
     output = request.form.to_dict()
     
@@ -179,6 +146,7 @@ def insertgasto():
     return redirect(url_for("index_cuentas_ingresar"))
 
 @app.route('/insertingreso', methods =['POST', "GET"])
+@flask_login.login_required
 def insertingreso():
     output = request.form.to_dict()
     
@@ -211,4 +179,31 @@ def reporteCuentas():
     
 
 
-#
+def meses(numero):
+    mes = ''
+    if numero == '01':
+        mes = 'Ene'
+    elif numero == '02':
+        mes = 'Feb'
+    elif numero == '03':
+        mes = 'Mar'
+    elif numero == '04':
+        mes = 'Abr'
+    elif numero == '05':
+        mes = 'May'
+    elif numero == '06':
+        mes = 'Jun'
+    elif numero == '07':
+        mes = 'Jul'
+    elif numero == '08':
+        mes = 'Ago'
+    elif numero == '09':
+        mes = 'Sep'
+    elif numero == '10':
+        mes = 'Oct'
+    elif numero == '11':
+        mes = 'Nov'
+    elif numero == '12':
+        mes = 'Dic'
+    
+    return mes
