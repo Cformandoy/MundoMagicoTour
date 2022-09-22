@@ -74,7 +74,7 @@ def login():
             flask_login.login_user(user)
             return flask.redirect(flask.url_for('index_finanzas'))
         else:
-            return redirect(url_for('login'))
+            return redirect(url_for('login')), 'Bad Login'
     if flask.request.method == 'GET':
         return render_template('login.html')
 
