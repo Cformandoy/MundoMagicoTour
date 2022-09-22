@@ -73,7 +73,8 @@ def login():
             user.id = email
             flask_login.login_user(user)
             return flask.redirect(flask.url_for('index_finanzas'))
-        
+        else:
+            return redirect(url_for('login'))
     if flask.request.method == 'GET':
         return render_template('login.html')
 
@@ -95,7 +96,7 @@ def protected():
 @app.route('/logout')
 def logout():
     flask_login.logout_user()
-    return 'Logged out'
+    return redirect(url_for('login'))
 
 @login_manager.unauthorized_handler
 def unauthorized_handler():
