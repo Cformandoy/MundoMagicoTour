@@ -1,4 +1,5 @@
 from crypt import methods
+import email
 from urllib import request
 from flask import Flask, render_template, request, url_for, redirect
 import eel
@@ -105,7 +106,9 @@ def settings():
 @app.route('/index-finanzas')
 @flask_login.login_required
 def index_finanzas():
-    return render_template('index-finanzas.html')
+    
+    return render_template("index-finanzas.html", name= flask_login.current_user.id)
+
 
 @app.route('/index-cuentas-ingresar')
 @flask_login.login_required
