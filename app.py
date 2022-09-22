@@ -29,9 +29,12 @@ login_manager = flask_login.LoginManager()
 
 login_manager.init_app(app)
 
-users = {'cformandoy@gmail.com': {'password': 'cristopher'},
+users = {'ignacio.soto': {'password': 'ignacio'},
          'cristopher.pozas': {'password': 'Cp209182793'},
-         'natacha.soto': {'password': 'natacha'},}
+         'natacha.soto': {'password': 'natacha'},
+         'scarlett.soto': {'password': 'scarlett'},
+         'amador.soto': {'password': 'amador'},
+         'leonardo.maulen': {'password': 'leonardo'},}
 
 
 class User(flask_login.UserMixin):
@@ -74,19 +77,9 @@ def login():
             flask_login.login_user(user)
             return flask.redirect(flask.url_for('index_finanzas'))
         else:
-            return redirect(url_for('login')), 'Bad Login'
+            return redirect(url_for('login'))
     if flask.request.method == 'GET':
         return render_template('login.html')
-
-    # email = flask.request.form['email']
-    # if email in users and flask.request.form['password'] == users[email]['password']:
-    #     user = User()
-    #     user.id = email
-    #     flask_login.login_user(user)
-    #     return flask.redirect(flask.url_for('index-finanzas'))
-
-    # return 'Bad login'
-
 
 @app.route('/protected')
 @flask_login.login_required
