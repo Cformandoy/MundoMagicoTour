@@ -95,6 +95,11 @@ def logout():
 def unauthorized_handler():
     return redirect(url_for('login'))
 
+@app.route("/settings")
+@flask_login.login_required
+def settings():
+    pass
+
 
 
 @app.route('/index-finanzas')
