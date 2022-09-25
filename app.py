@@ -37,6 +37,34 @@ users = {'ignacio.soto': {'password': 'ignacio'},
          'amador.soto': {'password': 'amador'},
          'leonardo.maulen': {'password': 'leonardo'},}
 
+def meses(numero):
+    mes = ''
+    if numero == '01':
+        mes = 'Ene'
+    elif numero == '02':
+        mes = 'Feb'
+    elif numero == '03':
+        mes = 'Mar'
+    elif numero == '04':
+        mes = 'Abr'
+    elif numero == '05':
+        mes = 'May'
+    elif numero == '06':
+        mes = 'Jun'
+    elif numero == '07':
+        mes = 'Jul'
+    elif numero == '08':
+        mes = 'Ago'
+    elif numero == '09':
+        mes = 'Sep'
+    elif numero == '10':
+        mes = 'Oct'
+    elif numero == '11':
+        mes = 'Nov'
+    elif numero == '12':
+        mes = 'Dic'
+    
+    return mes
 
 class User(flask_login.UserMixin):
     pass
@@ -112,12 +140,13 @@ def index_finanzas():
 @app.route('/index-cuentas-ingresar')
 @flask_login.login_required
 def index_cuentas_ingresar():
-    return render_template('index-cuentas-ingresar.html')
+    
+    return render_template('index-cuentas-ingresar.html',name= flask_login.current_user.id)
 
 @app.route('/index-cuentas-verificar')
 @flask_login.login_required
 def index_cuentas_verificar():
-    return render_template('index-cuentas-verificar.html')
+    return render_template('index-cuentas-verificar.html',name= flask_login.current_user.id)
 
 @app.route('/index-pagar')
 @flask_login.login_required
@@ -182,31 +211,4 @@ def reporteCuentas():
     
 
 
-def meses(numero):
-    mes = ''
-    if numero == '01':
-        mes = 'Ene'
-    elif numero == '02':
-        mes = 'Feb'
-    elif numero == '03':
-        mes = 'Mar'
-    elif numero == '04':
-        mes = 'Abr'
-    elif numero == '05':
-        mes = 'May'
-    elif numero == '06':
-        mes = 'Jun'
-    elif numero == '07':
-        mes = 'Jul'
-    elif numero == '08':
-        mes = 'Ago'
-    elif numero == '09':
-        mes = 'Sep'
-    elif numero == '10':
-        mes = 'Oct'
-    elif numero == '11':
-        mes = 'Nov'
-    elif numero == '12':
-        mes = 'Dic'
-    
-    return mes
+

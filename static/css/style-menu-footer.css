@@ -67,3 +67,16 @@ body {
     border-color: #6c757d !important;
 }
 
+.bg-new-finanzas{
+  background: rgb(148,205,233);
+  background: linear-gradient(90deg, rgba(148,205,233,1) 0%, rgba(236,193,212,1) 100%);
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.bg-new{
+  background: rgb(148,205,233);
+  background: linear-gradient(90deg, rgba(148,205,233,1) 0%, rgba(236,193,212,1) 100%);
+
+}
+
