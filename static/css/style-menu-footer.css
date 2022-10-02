@@ -63,9 +63,12 @@ body {
 
   .btn-primary-edit {
     color: #fff !important;
-    background-color: #8C1200 !important;
-    border-color: #6c757d !important;
+    background: rgb(148,205,233);
+    background: linear-gradient(90deg, rgba(148,205,233,1) 0%, rgba(231,203,215,1) 100%);
 }
+
+
+
 
 .bg-new-finanzas{
   background: rgb(148,205,233);

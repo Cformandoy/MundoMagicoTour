@@ -158,6 +158,7 @@ def index_pagar():
 def insertgasto():
     output = request.form.to_dict()
     
+    user = output["usuario_gasto"]
     tipo = output["tipo_gasto"]
     detalle = output["detalle_gasto"]
     metodo = output["metodo_gasto"]
@@ -171,9 +172,9 @@ def insertgasto():
     mesNew = meses(mes)
     
     fechaNew = dia +'-'+ mesNew +'-'+ age
-    data = [[tipo,detalle,metodo,fechaNew,monto]]
+    data = [[user,tipo,detalle,metodo,fechaNew,monto]]
 
-    salida = service.spreadsheets().values().append(spreadsheetId='10iwQfOkhsCcQZ2vrPG3Rpjj_h23PsdH22DvPALzvnMs', range='Sheet1!A1:E1', valueInputOption='USER_ENTERED', insertDataOption='INSERT_ROWS', body={"values":data}).execute()
+    salida = service.spreadsheets().values().append(spreadsheetId='10iwQfOkhsCcQZ2vrPG3Rpjj_h23PsdH22DvPALzvnMs', range='Sheet1!A1:F1', valueInputOption='USER_ENTERED', insertDataOption='INSERT_ROWS', body={"values":data}).execute()
     
     return redirect(url_for("index_cuentas_ingresar"))
 
@@ -182,6 +183,8 @@ def insertgasto():
 def insertingreso():
     output = request.form.to_dict()
     
+    user = output["usuario_ingreso"]
+    cli = output["cliente_ingreso"]
     tipo = output["tipo_ingreso"]
     detalle = output["detalle_ingreso"]
     metodo = output["metodo_ingreso"]
@@ -195,10 +198,9 @@ def insertingreso():
     mesNew = meses(mes)
     
     fechaNew = dia +'-'+ mesNew +'-'+ age
-    data = [[tipo,detalle,metodo,fechaNew,monto]]
+    data = [[user,cli,tipo,detalle,metodo,fechaNew,monto]]
 
-    salida = service.spreadsheets().values().append(spreadsheetId='1OmoQaTmJyi6y6B5W7xakoEwvpsALBU-P5W0ELVanaZE', range='Sheet1!A1:E1', valueInputOption='USER_ENTERED', insertDataOption='INSERT_ROWS', body={"values":data}).execute()
-    
+    salida = service.spreadsheets().values().append(spreadsheetId='1OmoQaTmJyi6y6B5W7xakoEwvpsALBU-P5W0ELVanaZE', range='general!A1:G1', valueInputOption='USER_ENTERED', insertDataOption='INSERT_ROWS', body={"values":data}).execute()
     return redirect(url_for("index_cuentas_ingresar"))
     
     

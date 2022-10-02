@@ -30,6 +30,59 @@
                 <main class="form-signin w-100 m-auto">
                   
                     <h1 class="h3 mb-3 fw-normal" style="text-align: center;">Ingresar Ingreso</h1>
+                    
+                    <div class="form-floating">
+                      
+                      <select class="form-control" name="usuario_ingreso" id="usuario_ingreso" style="margin-bottom: 2vh" placeholder="Usuario" required>
+                          <option value="">Seleccione su usuario</option>
+
+                          {% if name == "natacha.soto"%}
+                            <option value="Natacha Soto">
+                                  {{ name }}
+                            </option>
+                          {% endif %}
+
+                          {% if name == "cristopher.pozas"%}
+                            <option value="Cristopher Pozas">
+                                  {{ name }}
+                            </option>
+                          {% endif %}
+
+                          {% if name == "ignacio.soto"%}
+                            <option value="Ignacio Soto">
+                                  {{ name }}
+                            </option>
+                          {% endif %}
+
+                          {% if name == "scarlett.soto"%}
+                            <option value="Scarlett Soto">
+                                  {{ name }}
+                            </option>
+                          {% endif %}
+
+                          {% if name == "leonardo.maulen"%}
+                            <option value="Leonardo Maulen">
+                                  {{ name }}
+                            </option>
+                          {% endif %}
+
+                          {% if name == "amador.soto"%}
+                            <option value="Amador Soto">
+                                  {{ name }}
+                            </option>
+                          {% endif %}
+                          
+                      </select>
+                      <label for="usuario_ingreso">
+                        Usuario
+                      </label>
+                    </div>
+
+                    <div class="form-floating">
+                      <input type="text" class="form-control" style="margin-bottom: 2vh" name="cliente_ingreso" id="cliente_ingreso" placeholder="Ingrese Cliente">
+                      <label for="cliente_ingreso">Cliente</label>
+                    </div>
+
                     <div class="form-floating">
                       <select class="form-control" name="tipo_ingreso" id="tipo_ingreso" style="margin-bottom: 2vh" placeholder="Seleccione Tipo de Ingreso" required>
                           
@@ -40,7 +93,7 @@
                           <option value="Otro">Otro (Indique en detalle)</option>
                           <!-- <option value="cheque">Cheque</option> -->
                       </select>
-                      <label for="tipo_ingreso">Tipo de Gasto</label>
+                      <label for="tipo_ingreso">Tipo de Ingreso</label>
                     </div>
       
                     <div class="form-floating">
@@ -54,6 +107,7 @@
                           <option value="">Seleccione el metodo de pago</option>
                           <option value="Cash">Cash</option>
                           <option value="Zelle">Zelle</option>
+                          <option value="Western Union">Western Union</option>
                           <option value="Paypal">Paypal</option>
                           <option value="Pago Web">Pago Web</option>
                           <option value="Trasferencia Chilena">Trasferencia Chilena</option>
@@ -88,18 +142,64 @@
                   <h1 class="h3 mb-3 fw-normal" style="text-align: center;">Ingresar Gasto</h1>
                   
                   <div class="form-floating">
-                    <select class="form-control" name="tipo_gasto" id="tipo_gasto" style="margin-bottom: 2vh" placeholder="Seleccione Tipo de Gasto" required>
+                    <select class="form-control" name="usuario_gasto" id="usuario_gasto" style="margin-bottom: 2vh" placeholder="Usuario" required>
                         
-                        <option value="">Seleccione el tipo de gasto</option>
-                        <option value="Sueldos">Sueldos</option>
-                        <option value="Mantenimientos">Mantenimientos</option>
-                        <option value="Agua">Agua</option>
-                        <option value="Luz">Luz</option>
-                        <option value="Internet">Internet</option>
-                        <option value="Articulos de Limpieza">Articulos de Limpieza</option>
-                        <option value="Combustible">Combustible</option>
-                        <option value="Tag">Tag</option>
+                        <option value="Natacha Soto">
+                          {% if name == "natacha.soto"%}
+                              {{ name }}
+                          {% else %}
+                              Sin usuario
+                          {% endif %}
+                        </option>
+                        <option value="Cristopher Pozas">
+                          {% if name == "cristopher.pozas"%}
+                              {{ name }}
+                          {% endif %}
+                        </option>
+                        
+                    </select>
+                    <label for="usuario_gasto">
+                      Usuario
+                    </label>
+                  </div>
+
+
+                  <div class="form-floating">
+                    <select class="form-control" name="tipo_gasto" id="tipo_gasto" style="margin-bottom: 2vh" placeholder="Seleccione Tipo de Gasto" required>
+                      
+                      <option value="">Seleccione el tipo de gasto</option>
+                        
+                      <optgroup label="Agencia">
+                        <option value="Entradas">Entradas</option>
+                        <option value="Comisión">Comisión</option>
+                        <option value="Publicidad">Publicidad</option>
+                        <option value="Administración Agencia">Administración Agencia</option>
+                      </optgroup>
+
+                      <optgroup label="Vehículos">
+                        <option value="Combustibles">Combustibles</option>
+                        <option value="Cuota Vehículos">Cuota Vehículos</option>
+                        <option value="Seguros Vehículos">Seguros Vehículos</option>
+                        <option value="Mantención General Vehículos">Mantención General Vehículos</option>
+                      </optgroup>
+                        
+                      <optgroup label="Hogar">
+                        <option value="Gastos Hogar">Gastos Hogar</option>
+                        <option value="Arriendo Vivienda">Arriendo Vivienda</option>
+                        <option value="AT&T">AT&T</option>
+                      </optgroup>
+
+                      <optgroup label="Familia">
+                        <option value="Familia Scarlet">Familia Scarlet</option>
+                        <option value="Familia Leonardo">Familia Leonardo</option>
+                      </optgroup>
+
+                      <optgroup label="Otros">
+                        <option value="Prestamos Oportun">Prestamos Oportun</option>
                         <option value="Otro">Otro (Indique en detalle)</option>
+                      </optgroup>
+                        
+
                         <!-- <option value="cheque">Cheque</option> -->
                     </select>
                     <label for="tipo_gasto">Tipo de Gasto</label>
