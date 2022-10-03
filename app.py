@@ -32,7 +32,7 @@ login_manager.init_app(app)
 
 users = {'ignacio.soto': {'password': 'ignacio'},
          'cristopher.pozas': {'password': 'Cp209182793'},
-         'natacha.soto': {'password': 'natacha'},
+         'natacha.soto': {'password': '0321'},
          'scarlett.soto': {'password': 'scarlett'},
          'amador.soto': {'password': 'amador'},
          'leonardo.maulen': {'password': 'leonardo'},}
