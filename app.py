@@ -35,7 +35,7 @@ users = {'ignacio.soto': {'password': 'ignacio'},
          'natacha.soto': {'password': '0321'},
          'scarlett.soto': {'password': 'scarlett'},
          'amador.soto': {'password': 'amador'},
-         'leonardo.maulen': {'password': 'leonardo'},}
+         'leonardo.maulen': {'password': 'leonardo2346'},}
 
 def meses(numero):
     mes = ''
