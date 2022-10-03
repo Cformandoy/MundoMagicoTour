@@ -128,8 +128,9 @@
                     </div>
                 
                     <button class="w-100 btn btn-lg btn-primary-edit" style="margin-bottom: 1vh; background-color:#f19101" type="submit" id="btn_ingreso">Ingresar</button>
-                    <button onclick="cleanData()" class="w-100 btn btn-lg btn-secondary"  style="margin-bottom: 4vh;" id="buttonLimpiar">Limpiar</button>
-                
+                    <button onclick="cleanData()" class="w-100 btn btn-lg btn-secondary"  style="margin-bottom: 1vh;" id="buttonLimpiar">Limpiar</button>
+                    <a type="Button" class="w-100 btn btn-lg btn-primary-edit" style="margin-bottom: 4vh" href="/index-cuentas-verificar" >Verificar Ingresos</a>
+
                 </main>
               </form>
             </div>
@@ -143,19 +144,43 @@
                   
                   <div class="form-floating">
                     <select class="form-control" name="usuario_gasto" id="usuario_gasto" style="margin-bottom: 2vh" placeholder="Usuario" required>
-                        
+                      <option value="">Seleccione su usuario</option>
+
+                      {% if name == "natacha.soto"%}
                         <option value="Natacha Soto">
-                          {% if name == "natacha.soto"%}
                               {{ name }}
-                          {% else %}
-                              Sin usuario
-                          {% endif %}
                         </option>
+                      {% endif %}
+
+                      {% if name == "cristopher.pozas"%}
                         <option value="Cristopher Pozas">
-                          {% if name == "cristopher.pozas"%}
                               {{ name }}
-                          {% endif %}
                         </option>
+                      {% endif %}
+
+                      {% if name == "ignacio.soto"%}
+                        <option value="Ignacio Soto">
+                              {{ name }}
+                        </option>
+                      {% endif %}
+
+                      {% if name == "scarlett.soto"%}
+                        <option value="Scarlett Soto">
+                              {{ name }}
+                        </option>
+                      {% endif %}
+
+                      {% if name == "leonardo.maulen"%}
+                        <option value="Leonardo Maulen">
+                              {{ name }}
+                        </option>
+                      {% endif %}
+
+                      {% if name == "amador.soto"%}
+                        <option value="Amador Soto">
+                              {{ name }}
+                        </option>
+                      {% endif %}
                         
                     </select>
                     <label for="usuario_gasto">
@@ -235,7 +260,9 @@
                   </div>
               
                   <button class="w-100 btn btn-lg btn-primary-edit" style="margin-bottom: 1vh" type="submit" id="btn_gasto">Ingresar</button>
-                  <button onclick="cleanData()" class="w-100 btn btn-lg btn-secondary"  style="margin-bottom: 4vh;" id="buttonLimpiar">Limpiar</button>
+                  <button onclick="cleanData()" class="w-100 btn btn-lg btn-secondary"  style="margin-bottom: 1vh" id="buttonLimpiar">Limpiar</button>
+                  <a type="Button" class="w-100 btn btn-lg btn-primary-edit" style="margin-bottom: 4vh" href="/index-cuentas-verificar" target="_blank">Verificar Gastos</a>
+
                   <script src="layout.js"></script>
                 </main>
               </form>

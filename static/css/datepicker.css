@@ -3,7 +3,7 @@
     position: absolute;
     top: 13px;
     font-size: 20px;
-    color: #f19101;
+    color: #94cde9;
     z-index: 1000;
     }
     
@@ -47,8 +47,8 @@
     .datepicker-dropdown {
     top: 180px !important;
     left: calc(50% - 173.5px) !important;
-    border-right: #f19101;
-    border-left: #f19101;
+    border-right: #94cde9;
+    border-left: #94cde9;
     }
     
     .datepicker-dropdown.datepicker-orient-left:before {
@@ -57,11 +57,11 @@
     
     .datepicker-dropdown.datepicker-orient-left:after {
     left: calc(50% - 5px) !important;
-    border-bottom-color: #f19101;
+    border-bottom-color: #94cde9;
     }
     
     .datepicker-dropdown.datepicker-orient-right:after {
-    border-bottom-color: #f19101;
+    border-bottom-color: #94cde9;
     }
     
     .datepicker table tr td.today, span.focused {
@@ -70,7 +70,7 @@
     }
     
     thead tr:nth-child(2) {
-    background-color: #f19101 !important;
+    background-color: #94cde9 !important;
     }
     
     /*Weekday title*/
@@ -122,13 +122,13 @@
     
     .active selected range-start range-end day {
     border-radius: 50% !important;
-    background-image: linear-gradient(#f19101, #f19101) !important;
+    background-image: linear-gradient(#94cde9, #94cde9) !important;
     color: #fff !important;
     }
     
     .range-start, .range-end {
     border-radius: 50% !important;
-    background-image: linear-gradient(#f19101, #f19101) !important;
+    background-image: linear-gradient(#94cde9, #94cde9) !important;
     }
     
     .range {

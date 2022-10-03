@@ -64,7 +64,7 @@ body {
   .btn-primary-edit {
     color: #fff !important;
     background: rgb(148,205,233);
-    background: linear-gradient(90deg, rgba(148,205,233,1) 0%, rgba(231,203,215,1) 100%);
+    background: linear-gradient(90deg, rgba(148,205,233,1) 0%,rgba(148,205,233,1) 100%);
 }
 
 
